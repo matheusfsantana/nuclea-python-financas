@@ -7,6 +7,9 @@ def validar_cpf(cpf):
         cpf = input("CPF inválido, digite novamente: ")
     return validar.mask(cpf)
 
-
+def gerar_cpf():
+    cpf = CPF()
+    cpf_gerado = cpf.generate()
+    return cpf_gerado;
 
 
