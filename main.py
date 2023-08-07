@@ -1,4 +1,5 @@
 from utils.menus import *
+from models.ordem import Ordem
 
 
 def main():
@@ -9,11 +10,14 @@ def main():
         if op == 1:
             sub_menu_cliente()
         elif op == 2:
-            pass
+            ordem = Ordem()
+            ordem.cadastrar_ordem()
         elif op == 3:
-            pass
+            ordem = Ordem()
+            ordem.analisar_carteira_cliente()
         elif op == 4:
-            pass
+            ordem = Ordem()
+            ordem.obter_relatorio_cliente()
         elif op == 5:
             break
         else:

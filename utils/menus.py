@@ -1,5 +1,4 @@
 from models.cliente import Cliente
-from models.ordem import Ordem
 from utils.cpf import validar_cpf
 
 
@@ -50,7 +49,3 @@ def sub_menu_cliente():
 def retorna_menu():
     escolha = input("Deseja fazer outra operação? (sim / não): ").lower()
     return escolha == "sim" or escolha == "s"
-
-
-def sub_menu_ordem():
-    pass

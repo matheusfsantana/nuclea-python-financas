@@ -27,7 +27,6 @@ class Database:
         return uri
 
     def insert(self, table_name, table_attributes, params, values):
-
         try:
             self.connection.autocommit = False
 
@@ -43,6 +42,7 @@ class Database:
         except Exception as e:
             self.connection.rollback()
             print(f"Falha ao cadastrar {table_name}.")
+            print(f"Detalhe do erro: {e}")
 
     def select(self, table_name, condition):
 
@@ -82,3 +82,4 @@ class Database:
         result = self.cursor.execute(delete_query)
         self.connection.commit()
         return result
+

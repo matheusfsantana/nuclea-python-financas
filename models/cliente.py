@@ -11,6 +11,7 @@ class Cliente:
         self.table_attributes = "nome, cpf, rg, data_nascimento"
         self.params = "%s, %s, %s, %s"
 
+        self.id = None
         self.nome = None
         self.cpf = None
         self.rg = None
@@ -44,7 +45,6 @@ class Cliente:
         if select is not None:
             return select
 
-
     def update_cliente(self):
         cpf = validar_cpf(input("Digite o CPF do cliente: "))
         cliente = self.select_cliente_cpf(cpf)
@@ -64,7 +64,8 @@ class Cliente:
                 print(cliente_atualizado)
 
     def delete_cliente(self):
-        cliente = self.select_cliente_cpf()
+        cpf = validar_cpf(input("Digite o CPF do cliente: "))
+        cliente = self.select_cliente_cpf(cpf)
         if cliente is not None:
             condition = f"cpf = '{cliente[0][2]}'"
             result = self.database.delete(self.table, condition)
